@@ -1,0 +1,34 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    amq-protocol (2.3.2)
+    bunny (2.16.1)
+      amq-protocol (~> 2.3, >= 2.3.1)
+    coderay (1.1.3)
+    event_emitter (0.2.6)
+    eventmachine (1.2.7)
+    method_source (1.0.0)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    websocket (1.2.8)
+    websocket-client-simple (0.3.0)
+      event_emitter
+      websocket
+    xlog (0.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bunny
+  eventmachine
+  pry
+  websocket-client-simple
+  xlog
+
+RUBY VERSION
+   ruby 2.7.0p0
+
+BUNDLED WITH
+   2.1.4
