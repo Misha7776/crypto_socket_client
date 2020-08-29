@@ -4,6 +4,8 @@ require 'xlog'
 require 'pry'
 require 'eventmachine'
 require './amqp'
+require 'json'
+
 
 class SocketClient
   CRYPTO_MARKET = 'wss://stream.globitex.com/market-data'.freeze
@@ -27,7 +29,7 @@ class SocketClient
       puts 'Server started'
       log '[*] Waiting for messages. To exit press CTRL+C'
       @socket.on :message do |msg|
-        Rabbit::Amqp.publish('crypto_test', msg.data)
+        Rabbit::Amqp.publish('crypto_test', JSON.parse(msg.data))
         Xlog.info msg.data
       end
     end
