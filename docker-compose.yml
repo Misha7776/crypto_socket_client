@@ -1,0 +1,15 @@
+version: '3'
+services:
+  ruby_script:
+    image: ruby_socket_client
+    container_name: ruby_socket_client
+    volumes:
+      - ./:/usr/app/
+    environment:
+      RABBIT_HOST: host.docker.internal
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    stdin_open: true
+    restart: on-failure
