@@ -24,7 +24,8 @@ module Rabbit
       end
 
       def bunny
-        @bunny ||= Bunny.new(automatically_recover: false)
+        @bunny ||= Bunny.new(automatically_recover: false,
+                             host: ENV['RABBIT_HOST'])
       end
 
       def mutex

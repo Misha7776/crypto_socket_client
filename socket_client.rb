@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'websocket-client-simple'
 require 'xlog'
 require 'pry'
@@ -25,7 +24,7 @@ class SocketClient
   private
 
   def receive_messages
-    EM::run do
+    EventMachine.run do
       puts 'Server started'
       log '[*] Waiting for messages. To exit press CTRL+C'
       @socket.on :message do |msg|
